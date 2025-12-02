@@ -1,6 +1,7 @@
 use std::env;
 
 mod day1;
+mod day2;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -15,6 +16,8 @@ fn main() {
     match task.as_str() {
         "day1a" => day1::a(inf),
         "day1b" => day1::b(inf),
+        "day2a" => day2::a(inf),
+        "day2b" => day2::b(inf),
         _ => {
             println!("Unrecognized task '{}'", task)
         }
