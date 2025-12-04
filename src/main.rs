@@ -3,6 +3,7 @@ use std::env;
 mod day1;
 mod day2;
 mod day3;
+mod day4;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -21,6 +22,8 @@ fn main() {
         "day2b" => day2::b(inf),
         "day3a" => day3::a(inf),
         "day3b" => day3::b(inf),
+        "day4a" => day4::a(inf),
+        "day4b" => day4::b(inf),
         _ => {
             println!("Unrecognized task '{}'", task)
         }
