@@ -7,6 +7,7 @@ mod day4;
 mod day5;
 mod day6;
 mod day7;
+mod day8;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -33,6 +34,8 @@ fn main() {
         "day6b" => day6::b(inf),
         "day7a" => day7::a(inf),
         "day7b" => day7::b(inf),
+        "day8a" => day8::a(inf),
+        "day8b" => day8::b(inf),
         _ => {
             println!("Unrecognized task '{}'", task)
         }
