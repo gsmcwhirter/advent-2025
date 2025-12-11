@@ -138,8 +138,6 @@ pub fn b(inf: &String) {
     let mut vert_edges: HashMap<i64, Vec<Edge>> = HashMap::new();
     let mut hori_edges: HashMap<i64, Vec<Edge>> = HashMap::new();
 
-    let mut interior_cache: HashMap<(i64, i64), bool> = HashMap::new();
-
     if let Ok(lines) = util::read_lines(inf) {
         for line in lines.flatten() {
             if line.trim() == "" {
@@ -267,7 +265,7 @@ pub fn b(inf: &String) {
 
     areas.sort_by(|a1, a2| a2.area.cmp(&a1.area));
     for r in areas.iter() {
-        if valid_rectangle(&tiles, r, &corners, &vert_edges, &hori_edges, &mut interior_cache) {
+        if valid_rectangle(&tiles, r, &corners, &vert_edges, &hori_edges) {
             let start = usize::min(r.c1, r.c2);
             let ts = tiles[start];
             let end = usize::max(r.c1, r.c2);
@@ -295,7 +293,7 @@ pub fn b(inf: &String) {
     }
 }
 
-fn valid_rectangle(tiles: &Vec<Tile>, r: &Rectangle, corners: &Corners, vert_edges: &HashMap<i64, Vec<Edge>>, hori_edges: &HashMap<i64, Vec<Edge>>, interior_cache: &mut HashMap<(i64, i64), bool>) -> bool {
+fn valid_rectangle(tiles: &Vec<Tile>, r: &Rectangle, corners: &Corners, vert_edges: &HashMap<i64, Vec<Edge>>, hori_edges: &HashMap<i64, Vec<Edge>>) -> bool {
     let start = usize::min(r.c1, r.c2);
     let ts = tiles[start];
     let end = usize::max(r.c1, r.c2);

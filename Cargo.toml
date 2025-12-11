@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+microlp = "0.2.11"
 
 [[bin]]
 name = "advent-2025"
